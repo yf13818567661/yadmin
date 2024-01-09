@@ -44,6 +44,24 @@ export function login(params) {
   );
 }
 
+export function getUserList(params){
+  return http.request({
+    url: '/user',
+    method: 'GET',
+    params,
+  })
+}
+
+export function updateUser(id, data){
+  return http.request(
+    {
+    url: `/user/${id}`,
+    method: 'PUT',
+    data
+  }
+  )
+}
+
 /**
  * @description: 用户修改密码
  */

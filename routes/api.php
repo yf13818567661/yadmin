@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('user/login', [\App\Http\Controllers\UserController::class, 'login'])->name('login');
 
 Route::group(['middleware' => 'auth:sanctum'], function (){
-    Route::apiResources([
-        'menu' => \App\Http\Controllers\MenuController::class
-    ]);
+    Route::get('menus/route/tree', [\App\Http\Controllers\MenuController::class,'tree']);
+    Route::apiResource('menus', \App\Http\Controllers\MenuController::class);
+    Route::apiResource('user', \App\Http\Controllers\UserController::class);
 });

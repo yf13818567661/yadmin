@@ -21,7 +21,7 @@ const routes: Array<RouteRecordRaw> = [
         meta: {
           title: '关于项目',
           activeMenu: 'about_index',
-          permissions: ['dashboard_console'],
+          // permissions: ['dashboard_console'],
         },
         component: () => import('@/views/about/index.vue'),
       },

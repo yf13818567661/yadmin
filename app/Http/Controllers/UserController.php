@@ -4,19 +4,31 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
+
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $pageSize = $request->get('pageSize');
+        $paginate = User::paginate($pageSize);
+        return  $this->success(
+            [
+                'list' => $paginate->items(),
+                'page' => $paginate->currentPage(),
+                'pageCount' => $paginate->lastPage(),
+//                'itemCount' => $paginate->total(),
+                'pageSize' => $paginate->perPage(),
+            ]
+        );
     }
 
     /**
@@ -38,7 +50,12 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $where = [
+            'status' => 1,
+            'id' => $id
+        ];
+        $user = User::where($where)->first();
+        return  $this->success($user);
     }
 
     /**
@@ -46,11 +63,20 @@ class UserController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\jsonResponse
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $data = $request->all();
+        foreach ($data as $key => $row){
+            $user->setAttribute($key, $row);
+        }
+        if ($user->save()){
+            return $this->success($user);
+        }else{
+            return $this->error('更新失败');
+        }
     }
 
     /**

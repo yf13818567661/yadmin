@@ -49,10 +49,11 @@ class Handler extends ExceptionHandler
         $statusCode = $error->getStatusCode();
         $response = [
             'code' => $statusCode,
-            'message' => 'Server Error'
+            'message' => 'Server Error',
+            'result' => [],
         ];
         if (config('app.debug')){
-            $response['msg'] = $e->getMessage()??$e->getMessage();
+            $response['message'] = $e->getMessage()??$e->getMessage();
             $response['file'] = $e->getFile()??$e->getFile();
             $response['line'] = $e->getLine()??$e->getLine();
             $response['trace'] = $e->getTrace()??$e->getTrace();;

@@ -6,7 +6,7 @@
         <FormOutlined />
       </n-icon>
     </div>
-    <div class="flex editable-cell-content" v-show="isEdit" v-click-outside="onClickOutside">
+    <div  v-show="isEdit" class="flex editable-cell-content"  v-click-outside="onClickOutside">
       <div class="editable-cell-content-comp">
         <CellComponent
           v-bind="getComponentProps"

@@ -236,7 +236,7 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
     deepMerge(
       {
         timeout: 10 * 1000,
-        authenticationScheme: '',
+        authenticationScheme: 'Bearer',
         // 接口前缀
         prefixUrl: urlPrefix,
         headers: { 'Content-Type': ContentTypeEnum.JSON },

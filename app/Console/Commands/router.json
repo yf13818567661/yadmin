@@ -1,0 +1,349 @@
+[
+    {
+        "path": "/system",
+        "name": "System",
+        "redirect": "/system/menu",
+        "meta": {
+            "title": "系统设置",
+            "sort": 1
+        },
+        "children": [
+            {
+                "path": "menu",
+                "name": "system_menu",
+                "meta": {
+                    "title": "菜单权限管理"
+                }
+            },
+            {
+                "path": "role",
+                "name": "system_role",
+                "meta": {
+                    "title": "角色权限管理"
+                }
+            }
+        ]
+    },
+    {
+        "path": "/list",
+        "name": "List",
+        "redirect": "/list/basic-list",
+        "meta": {
+            "title": "列表页面",
+            "sort": 2
+        },
+        "children": [
+            {
+                "path": "basic-list",
+                "name": "basic-list",
+                "meta": {
+                    "title": "基础列表"
+                }
+            },
+            {
+                "path": "basic-info/:id?",
+                "name": "basic-info",
+                "meta": {
+                    "title": "基础详情",
+                    "hidden": true,
+                    "activeMenu": "basic-list"
+                }
+            }
+        ]
+    },
+    {
+        "path": "/exception",
+        "name": "Exception",
+        "redirect": "/exception/403",
+        "meta": {
+            "title": "异常页面",
+            "sort": 3
+        },
+        "children": [
+            {
+                "path": "403",
+                "name": "exception-403",
+                "meta": {
+                    "title": "403"
+                }
+            },
+            {
+                "path": "404",
+                "name": "exception-404",
+                "meta": {
+                    "title": "404"
+                }
+            },
+            {
+                "path": "500",
+                "name": "exception-500",
+                "meta": {
+                    "title": "500"
+                }
+            }
+        ]
+    },
+    {
+        "path": "/form",
+        "name": "Form",
+        "redirect": "/form/basic-form",
+        "meta": {
+            "title": "表单页面",
+            "sort": 3
+        },
+        "children": [
+            {
+                "path": "basic-form",
+                "name": "form-basic-form",
+                "meta": {
+                    "title": "基础表单"
+                }
+            },
+            {
+                "path": "step-form",
+                "name": "form-step-form",
+                "meta": {
+                    "title": "分步表单"
+                }
+            },
+            {
+                "path": "detail",
+                "name": "form-detail",
+                "meta": {
+                    "title": "表单详情"
+                }
+            }
+        ]
+    },
+    {
+        "path": "/result",
+        "name": "Result",
+        "redirect": "/result/success",
+        "meta": {
+            "title": "结果页面",
+            "sort": 4
+        },
+        "children": [
+            {
+                "path": "success",
+                "name": "result-success",
+                "meta": {
+                    "title": "成功页"
+                }
+            },
+            {
+                "path": "fail",
+                "name": "result-fail",
+                "meta": {
+                    "title": "失败页"
+                }
+            },
+            {
+                "path": "info",
+                "name": "result-info",
+                "meta": {
+                    "title": "信息页"
+                }
+            }
+        ]
+    },
+    {
+        "path": "/setting",
+        "name": "Setting",
+        "redirect": "/setting/account",
+        "meta": {
+            "title": "设置页面",
+            "sort": 5
+        },
+        "children": [
+            {
+                "path": "account",
+                "name": "setting-account",
+                "meta": {
+                    "title": "个人设置"
+                }
+            },
+            {
+                "path": "system",
+                "name": "setting-system",
+                "meta": {
+                    "title": "系统设置"
+                }
+            }
+        ]
+    },
+    {
+        "path": "/comp",
+        "name": "comp",
+        "redirect": "/comp/table",
+        "meta": {
+            "title": "组件示例",
+            "sort": 8
+        },
+        "children": [
+            {
+                "path": "table",
+                "name": "comp_table",
+                "redirect": "/comp/table/basic",
+                "meta": {
+                    "title": "表格"
+                },
+                "children": [
+                    {
+                        "path": "basic",
+                        "name": "comp_table_basic",
+                        "meta": {
+                            "title": "基础表格"
+                        }
+                    },
+                    {
+                        "path": "editCell",
+                        "name": "comp_table_editCell",
+                        "meta": {
+                            "title": "单元格编辑"
+                        }
+                    },
+                    {
+                        "path": "editRow",
+                        "name": "comp_table_editRow",
+                        "meta": {
+                            "title": "整行编辑"
+                        }
+                    }
+                ]
+            },
+            {
+                "path": "form",
+                "name": "comp_form",
+                "redirect": "/comp/form/basic",
+                "meta": {
+                    "title": "表单"
+                },
+                "children": [
+                    {
+                        "path": "basic",
+                        "name": "comp_form_basic",
+                        "meta": {
+                            "title": "基础使用"
+                        }
+                    },
+                    {
+                        "path": "useForm",
+                        "name": "useForm",
+                        "meta": {
+                            "title": "useForm"
+                        }
+                    }
+                ]
+            },
+            {
+                "path": "upload",
+                "name": "comp_upload",
+                "meta": {
+                    "title": "上传图片"
+                }
+            },
+            {
+                "path": "modal",
+                "name": "comp_modal",
+                "meta": {
+                    "title": "弹窗扩展"
+                }
+            },
+            {
+                "path": "richtext",
+                "name": "richtext",
+                "meta": {
+                    "title": "富文本"
+                }
+            },
+            {
+                "path": "drag",
+                "name": "Drag",
+                "meta": {
+                    "title": "拖拽"
+                }
+            }
+        ]
+    },
+    {
+        "path": "/frame",
+        "name": "Frame",
+        "redirect": "/frame/docs",
+        "meta": {
+            "title": "外部页面",
+            "sort": 8
+        },
+        "children": [
+            {
+                "path": "naive-admin",
+                "name": "naive-admin",
+                "meta": {
+                    "title": "NaiveAdmin",
+                    "frameSrc": "https://www.naiveadmin.com"
+                }
+            },
+            {
+                "path": "docs",
+                "name": "frame-docs",
+                "meta": {
+                    "title": "项目文档(内嵌)",
+                    "frameSrc": "https://jekip.github.io/docs"
+                }
+            },
+            {
+                "path": "naive",
+                "name": "frame-naive",
+                "meta": {
+                    "title": "NaiveUi(内嵌)",
+                    "frameSrc": "https://www.naiveui.com"
+                }
+            }
+        ]
+    },
+    {
+        "path": "/directive",
+        "name": "directive",
+        "meta": {
+            "sort": 9,
+            "isRoot": true,
+            "activeMenu": "directive_index"
+        },
+        "children": [
+            {
+                "path": "index",
+                "name": "directive_index",
+                "meta": {
+                    "title": "指令示例",
+                    "activeMenu": "directive_index"
+                }
+            }
+        ]
+    },
+    {
+        "path": "/about",
+        "name": "about",
+        "meta": {
+            "sort": 10,
+            "isRoot": true,
+            "activeMenu": "about_index"
+        },
+        "children": []
+    },
+    {
+        "path": "/external",
+        "name": "https://docs.naiveadmin.com",
+        "meta": {
+            "title": "项目文档",
+            "sort": 11
+        }
+    },
+    {
+        "path": "/newversion",
+        "name": "https://www.naiveadmin.com",
+        "meta": {
+            "title": "Pro 版本",
+            "sort": 12
+        }
+    }
+]

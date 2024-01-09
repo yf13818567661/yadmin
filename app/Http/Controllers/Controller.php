@@ -20,7 +20,7 @@ class Controller extends BaseController
     {
         $response = [
             'code' => $code,
-            'data' => $data,
+            'result' => $data,
             'message' => 'success'
         ];
         return response()->json($response);
@@ -37,7 +37,7 @@ class Controller extends BaseController
     {
         $response = [
             'code' => $code,
-            'data' => $data,
+            'result' => $data,
             'message' => $message
         ];
         return response()->json($response, $code);

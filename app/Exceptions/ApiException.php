@@ -16,6 +16,7 @@ class ApiException extends Exception
         return response()->json([
             'message' => $this->message,
             'code' => $this->code,
+            'result' => [],
         ], $this->code);
     }
 }

@@ -28,10 +28,10 @@ export function resultPageSuccess<T = any>(
   };
 }
 
-export function resultError(message = 'Request failed', { code = -1, result = null } = {}) {
+export function resultError(message = 'Request failed', { code = -1, data = null } = {}) {
   return {
     code,
-    result,
+    data,
     message,
     type: 'error',
   };

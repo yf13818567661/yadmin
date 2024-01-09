@@ -1,3 +1,6 @@
+import { TABS_ROUTES } from '@/store/mutation-types'
+import router from '@/router'
+
 export function checkStatus(status: number, msg: string): void {
   const $message = window['$message'];
   switch (status) {
@@ -9,6 +12,8 @@ export function checkStatus(status: number, msg: string): void {
     // 在登录成功后返回当前页面，这一步需要在登录页操作。
     case 401:
       $message.error('用户没有权限（令牌、用户名、密码错误）!');
+      localStorage.removeItem(TABS_ROUTES);
+      router.replace({name: 'Login'})
       break;
     case 403:
       $message.error('用户得到授权，但是访问是被禁止的。!');

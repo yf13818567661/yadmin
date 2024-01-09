@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menus;
 use Illuminate\Http\Request;
 
 class MenuController extends Controller
@@ -63,5 +64,14 @@ class MenuController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * 菜单树形
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function tree()
+    {
+        return $this->success((new Menus())->menusTree());
     }
 }
